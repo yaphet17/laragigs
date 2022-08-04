@@ -45,7 +45,7 @@
                 </div>
             </div>
         </x-card>
-        @auth
+        @if($listing->user_id == auth()->user()->id)
         <x-card class="mt-4 p-2 flex space-x-6">
             <a href="/listings/{{$listing->id}}/edit">
                 <i class="fa-solid fa-pencil"></i>
@@ -58,7 +58,7 @@
                         <i class="fa-solid fa-trash"></i> Delete</button>
             </form>
         </x-card>
-        @endauth
+        @endif
     </div>
 @else
     <p>Invalid id</p>
