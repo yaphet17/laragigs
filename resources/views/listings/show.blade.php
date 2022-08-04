@@ -1,7 +1,7 @@
 <x-layout>
 @include("partials._search")
 @if(!empty($listing))
-    <a href="index.html" class="inline-block text-black ml-4 mb-4"
+    <a href="/" class="inline-block text-black ml-4 mb-4"
     ><i class="fa-solid fa-arrow-left"></i> Back
     </a>
     <div class="mx-4">
@@ -45,6 +45,7 @@
                 </div>
             </div>
         </x-card>
+        @auth
         <x-card class="mt-4 p-2 flex space-x-6">
             <a href="/listings/{{$listing->id}}/edit">
                 <i class="fa-solid fa-pencil"></i>
@@ -57,6 +58,7 @@
                         <i class="fa-solid fa-trash"></i> Delete</button>
             </form>
         </x-card>
+        @endauth
     </div>
 @else
     <p>Invalid id</p>

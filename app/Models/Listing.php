@@ -22,6 +22,10 @@ class Listing extends Model
         }
     }
 
+    public function user(){
+         return $this->belongsTo(User::class, 'user_id');
+    }
+
 //    public static function all($columns = ["*"]): array
 //    {
 //        return [
